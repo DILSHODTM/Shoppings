@@ -1,8 +1,7 @@
 import {React, useContext, useState, useEffect, useRef} from 'react';
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container , NavLink } from "react-bootstrap";
 import { ThemeContext } from '../../globalComponents/ThemeProvider';
-import{Link , NavLink} from 'react-router-dom';
-import {useCart} from "react-use-cart"
+
 import {BiSun, BiMoon, BiCart} from 'react-icons/bi';
 import "./style.scss";
 const index = () => {
@@ -17,19 +16,6 @@ useEffect(() => {
 
 
 
-
-
-
-const {
-isEmpty,
-totalItems,
-}=useCart()
- 
-
-
-
-
-
    return (
 
       <>
@@ -41,7 +27,7 @@ totalItems,
       <Container>
       
         
-        <Navbar.Brand href="#home" className={darkMode? 'text-dark-primary' : 'text-light-primary' }>
+        <Navbar.Brand  className={darkMode? 'text-dark-primary' : 'text-light-primary' }>
          <b>Online shopping</b>
         </Navbar.Brand>
        
@@ -50,11 +36,11 @@ totalItems,
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link className={darkMode? 'text-dark-primary' : 'text-light-primary'} 
+            <NavLink className={darkMode? 'text-dark-primary' : 'text-light-primary'} 
             onClick={() => setDarkMode(!darkMode)}
             >
              {darkMode? <BiSun size="1.7rem"/> :  <BiMoon size="1.7rem"/> }
-              </Nav.Link>
+              </NavLink>
             
             
           </Nav>

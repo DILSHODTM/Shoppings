@@ -11,12 +11,12 @@ const App = () => {
   return (
     <>
    
-    <main className={theme? 'bg-black':'bg-light-2' } >
+    <div className={theme? 'bg-black':'bg-light-2' } >
       <Navbar />
       <Home />
       
 
-      </main>
+      </div>
 
       
     </>
